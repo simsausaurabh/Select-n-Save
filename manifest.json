@@ -9,13 +9,16 @@
     "default_popup": "extension_popup.html"
   },
 
+  "icons": {
+    "16": "S-n-S.png",
+    "32": "S-n-S.png",
+    "64": "S-n-S.png",
+    "128": "S-n-S.png"
+  },
+
   "background": {
     "scripts": ["saveLocally.js"]
   },
-
-  //"chrome_url_overrides": {
-  //  "newtab": "extension_newtab.html"
-  //},
 
   "permissions": [
     "contextMenus",

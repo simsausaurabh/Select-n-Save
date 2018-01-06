@@ -1,33 +1,41 @@
-var myText;
-var myStrText=JSON.stringify(myText);
-
 chrome.contextMenus.create({
 
-title: "Select-n-Save",
-contexts:["selection"],
-onclick: save
-
+	title: "Select-n-Save",
+	contexts:["selection"],
+	onclick: save
 });
 
-
 function save(selectedText) {
-	// console.log("successfully saved!");
-	// alert(selectedText.selectionText);
 
 	var str = selectedText.selectionText;
-    var first = "";
-    for(var i=0;i<str.length;i++) {
+    var fileName = "";
+    var len = str.length;
+    
+    if(len>8) {
+
+    	len = 8;
+    }
+    for(var i=0;i<len;i++) {
+
     	if(str.charAt(i)!=' '){
-	    	first = first + str.charAt(i);
+
+	    	fileName = fileName + str.charAt(i);
     	}
     	else {
+
     		break;
     	}
     }
 
+    var today = new Date();
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+	var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+	var dateTime = date+' '+time;
+
+	fileName = fileName+""+dateTime;
+
 	var tempElem = document.createElement('a');
     tempElem.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(selectedText.selectionText));
-    tempElem.setAttribute('download', first);
+    tempElem.setAttribute('download', fileName);
     tempElem.click();
-
 }
