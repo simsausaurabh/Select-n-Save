@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+
+  "name": "Select-n-Save",
+  "description": "Save content locally",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_popup": "extension_popup.html"
+  },
+
+  "background": {
+    "scripts": ["saveLocally.js"]
+  },
+
+  "chrome_url_overrides": {
+    "newtab": "extension_newtab.html"
+  },
+
+  "permissions": [
+    "contextMenus"
+  ]
+
+}
