@@ -13,12 +13,13 @@
     "scripts": ["saveLocally.js"]
   },
 
-  "chrome_url_overrides": {
-    "newtab": "extension_newtab.html"
-  },
+  //"chrome_url_overrides": {
+  //  "newtab": "extension_newtab.html"
+  //},
 
   "permissions": [
-    "contextMenus"
+    "contextMenus",
+    "storage"
   ]
 
 }
