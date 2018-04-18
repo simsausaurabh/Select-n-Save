@@ -17,7 +17,8 @@
   },
 
   "background": {
-    "scripts": ["saveLocally.js"]
+    "scripts": ["cryptojs.js",
+      "saveLocally.js"]
   },
 
   "permissions": [
